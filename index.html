@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>JavaCoffee</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"> 
+	<link href="css/jquery.mobile-1.2.0.min.css" rel="stylesheet" />
+    <link href="css/styleInternet.css" rel="stylesheet" />
+
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/jsInternet.js"></script>
+</head> 
+<body> 
+
+<!--page principal -->
+<div data-role="page" id="principal">
+	<div data-role="header">
+		<h1>Java Coffee</h1>
+        <a href="#agregar" data-role="button" data-rel="dialog" data-icon="plus" class="ui-btn-right" >Agregar</a>
+	</div><!-- /header -->
+    <!--Content principal -->
+  	<div id="mainContent" data-role="content">	
+	</div><!-- /content -->
+</div><!-- /page principal-->
+
+
+
+<!-- agregar pc page-->
+<div data-role="page" id="agregar"> 
+	<div data-role="header">
+		<h1>Agregar PC</h1>
+   	</div>
+	<div data-role="content"> <!--content -->
+   		<label for="basic">Cuantas PC se van a gregar:</label>
+    	<input type="number" min="1"  name="pcForm" id="pcForm" value="1" /> 
+    	<button data-icon="check" onClick="validaAddPc();">Aceptar</button>
+    </div> <!--content -->
+</div><!--agregar pc page -->
+
+
+<!--configurar pc page -->
+<div data-role="page" id="configuraPc" >
+	<div data-role="header">
+		<h1 id="tituloConfiguracion" data-idpc=""> </h1>
+		<a href="#principal" data-icon="arrow-l">Regresar</a>
+	</div>
+	<div data-role="content">
+        <div data-role="fieldcontain">
+			<label for="busy" class="labelConfig">Ocupada:</label>
+			<select name="busy" id="busy" data-role="slider" onChange="changeStatus();">
+				<option value="off" id="freeId">No</option>
+				<option value="on" id="busyId">Si</option>
+			</select> 
+		</div>
+		<div data-role="fieldcontain">
+    		<label for="startTime" class="labelConfig">Inicio:</label>
+		    <input type="time" name="startTime" id="startTime" value=""  onFocus="savePreviousValue(this)" onBlur="refreshWorkerTime();" class="timeConfig"/>
+		</div>	
+		<div data-role="fieldcontain">
+    		<label for="endTime" class="labelConfig">Fin:</label>
+    		<input type="time" name="endTime" id="endTime" value=""  class="timeConfig" onFocus="onfocusEndTime(this);"/>
+		</div>
+		<label><input type="checkbox" name="useEndTime" id="useEndTimeCheck" onClick="useEndTimeFunction(this);"/> Utilizar hora de fin </label>
+
+	</div><!--end content -->
+</div><!--end page -->
+
+
+</body>
+</html>

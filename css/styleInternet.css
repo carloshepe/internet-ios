@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mainContent{
+	text-align:center;	
+}
+
+
+label.labelConfig{
+	width:20% !important;
+}
+
+input.timeConfig{
+	width:150px !important;
+}
+
+.blockPc{
+	display:inline-table;
+	width:200px;
+	height:250px;
+	border-radius:10px;margin:15px;
+	background-color:#FFF;
+}
+
+.busyPc{
+	background-position:0px 0px;
+}
+
+.freePc{
+	background-position:-200px 0px;
+}
+
+.busyDivPc{
+	box-shadow: -4px -4px 8px 0px black inset;
+}
+
+.freeDivPc{
+	box-shadow: 1px 1px 0px 1px black inset;
+}
+
